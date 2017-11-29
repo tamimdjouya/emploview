@@ -7,15 +7,15 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
   <ion-list>
-    <ion-item *ngFor="let a of announcements">
+    <ion-item *ngFor="let a of announcements" (click)="showDetail(a)">
       <ion-thumbnail item-start>
         <img src="{{a.image}}">
       </ion-thumbnail>
-      <h2>{{a.title}}</h2>
-      <p>{{a.publishDate | date: 'dd/MM/yyy HH:mm'}}</p>
+      <h2 class="title">{{a.title}}</h2>
+      <small class="publish-date">{{a.publishDate | date: 'dd/MM/yyy HH:mm'}}</small>
     </ion-item>
   </ion-list>
 

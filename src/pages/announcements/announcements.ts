@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Announcement } from "./announcement";
+import { AnnouncementDetailPage } from "../announcement-detail/announcement-detail";
 
 @Component({
   selector: 'page-announcements',
@@ -40,6 +41,10 @@ export class AnnouncementsPage {
         publishDate: new Date()
       }
     ];
+  }
+
+  showDetail(announcement : Announcement) {
+    this.navCtrl.push(AnnouncementDetailPage, {announcement: announcement});
   }
 
 }
