@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Verlof</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button block (click)="openMenu()">
+      Klik hier voor reden verlof.
+  </button>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Klik hier voor reden verlof.</ion-label>
+      <ion-select [(ngModel)]="verlof">
+        <ion-option value="nes">Ziek</ion-option>
+        <ion-option value="n64">Bruiloft</ion-option>
+        <ion-option value="ps">Begravenis</ion-option>
+        <ion-option value="genesis">Kat dood</ion-option>
+        <ion-option value="saturn">Geen zin</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
