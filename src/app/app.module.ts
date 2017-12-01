@@ -9,12 +9,16 @@ import { HrmPage } from '../pages/hrm/hrm';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { EventsPage } from "../pages/events/events";
+import { EventDetailPage } from "../pages/event-detail/event-detail";
 
 @NgModule({
   declarations: [
     MyApp,
     AnnouncementsPage,
     AnnouncementDetailPage,
+    EventsPage,
+    EventDetailPage,
     HrmPage
   ],
   imports: [
@@ -26,6 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     AnnouncementsPage,
     AnnouncementDetailPage,
+    EventsPage,
+    EventDetailPage,
     HrmPage
   ],
   providers: [
