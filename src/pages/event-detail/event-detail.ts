@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Announcement } from "../announcements/announcement";
+import { Event } from "../../Models/event";
 
 @Component({
   selector: 'page-event-detail',

@@ -1,4 +1,4 @@
-import { Announcement } from "../announcements/announcement";
+import { Announcement } from "./announcement";
 
 export class Event extends Announcement{
   startDate: Date;

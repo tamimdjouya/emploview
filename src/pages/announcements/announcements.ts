@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Announcement } from "./announcement";
+import { Announcement } from "../../Models/announcement";
 import { AnnouncementDetailPage } from "../announcement-detail/announcement-detail";
 
 @Component({
