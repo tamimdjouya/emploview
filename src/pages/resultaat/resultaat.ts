@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {CoursePage} from "../course/course";
-import { IntranetPage} from "../intranet/intranet";
+import { Color } from "ng2-charts";
 
 
 /**
