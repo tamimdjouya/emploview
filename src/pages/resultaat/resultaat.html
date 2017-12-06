@@ -16,20 +16,35 @@
 <ion-content padding>
   Het volgende resultaat is behaald:<br><br><br><br>
 
-  <div style="display: block">
-    <canvas baseChart
-            [data]="doughnutChartData"
-            [labels]="doughnutChartLabels"
-            [chartType]="doughnutChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
-  </div>
-  <br>
-  <b>Gefeliciteerd! U bent geslaagd.</b>
 
-  <ion-row>
-    <ion-col width-50 style="text-align: left">
-      <button ion-button (click)="beginScherm()">Ga terug</button>
-    </ion-col>
-  </ion-row>
+
+  <div style="display: block">
+    <!--<canvas baseChart-->
+            <!--[data]="doughnutChartData"-->
+            <!--[labels]="doughnutChartLabels"-->
+            <!--[chartType]="doughnutChartType"-->
+            <!--(chartHover)="chartHovered($event)"-->
+            <!--(chartClick)="chartClicked($event)"-->
+    <!--&gt;</canvas>-->
+
+    <canvas baseChart
+            [chartType]="type"
+            [datasets]="datasets"
+            [labels]="labels"
+            [colors]="colors">
+
+    </canvas>
+
+  </div>
+  <br><br>
+  <b>Gefeliciteerd! U bent geslaagd.</b>
+  <div id="buttonGaTerug" name="buttonGaTerug">
+    <ion-row>
+      <ion-col width-50 style="text-align: left">
+        <button ion-button (click)="beginScherm()">Ga terug</button>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
+
+

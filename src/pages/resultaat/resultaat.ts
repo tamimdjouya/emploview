@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {CoursePage} from "../course/course";
+import { IntranetPage} from "../intranet/intranet";
+
 
 /**
  * Generated class for the ResultaatPage page.
@@ -26,7 +28,20 @@ export class ResultaatPage {
   // Doughnut
   public doughnutChartLabels:string[] = ['Goed', 'Fout'];
   public doughnutChartData:number[] = [500, 300];
-  public doughnutChartType:string = 'doughnut';
+  public doughnutChartType:string = 'doughnut'
+
+
+  public type:string = 'doughnut';
+  public datasets: any[] = [
+    {
+      data: [500, 200],
+      backgroundColor: [
+        "#20eb24",
+        "#ff0a03",
+      ]
+    }];
+  public labels:string[] = ['Goed', 'Fout'];
+  public colors: Array<Color> = [{}];
 
 // events
   public chartClicked(e:any):void {
@@ -38,7 +53,7 @@ export class ResultaatPage {
   }
 
   beginScherm(){
-    this.navCtrl.push(CoursePage);
+    this.navCtrl.popToRoot();
   }
 
 
