@@ -14,5 +14,9 @@
   <h2 class="title">{{event.title}}</h2>
   <time class="publish-date">{{event.publishDate | date: 'dd/MM/yyy HH:mm'}}</time>
   <p>{{event.content}}</p>
+  <button ion-button (click)="toggleSignedup()">
+    <span *ngIf="!isSignedup">Inschrijven</span>
+    <span *ngIf="isSignedup">Uitschrijven</span>
+  </button>
 
 </ion-content>

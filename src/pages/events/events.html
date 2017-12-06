@@ -15,6 +15,7 @@
     </ion-thumbnail>
     <h2 class="title">{{e.title}}</h2>
     <small class="start-date">{{e.startDate | date: 'dd/MM/yyy HH:mm'}}</small>
+    <ion-badge *ngIf="isSignedup(e.id)" item-right>Ingeschreven</ion-badge>
   </ion-item>
 
 </ion-content>

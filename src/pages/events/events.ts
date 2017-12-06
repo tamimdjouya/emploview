@@ -10,10 +10,12 @@ import { EventDetailPage } from "../event-detail/event-detail";
 export class EventsPage {
 
   private events : Event[];
+  public signups = [];
 
   constructor(public navCtrl: NavController) {
 
     this.getEvents();
+    this.getSignups();
 
   }
 
@@ -38,8 +40,22 @@ export class EventsPage {
     ];
   }
 
+  getSignups() {
+    this.signups = [0];
+  }
+
+  isSignedup(eventId) {
+    return this.signups.indexOf(eventId) !== -1;
+  }
+
   showDetail(event : Event) {
-    this.navCtrl.push(EventDetailPage, {event: event});
+    this.navCtrl.push(EventDetailPage, {
+      event: event,
+      signups: this.signups,
+      callback: (signups) => {
+        this.signups = signups;
+      }
+    });
   }
 
 }
