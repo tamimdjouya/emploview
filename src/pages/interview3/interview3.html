@@ -1,0 +1,114 @@
+<!--
+  Generated template for the InterviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>interview</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1>holaa</h1>
+
+    <b>Question 9: Voor hoeveel procent bestaat een menselijk lichaam uit water?</b><br> <br>
+    <ion-list radio-group [(ngModel)]="relationship8">
+
+      <ion-item>
+        <ion-label>70%</ion-label>
+        <ion-radio value="friends" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>10%</ion-label>
+        <ion-radio value="family"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>50%</ion-label>
+        <ion-radio value="turkije"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>90%</ion-label>
+        <ion-radio value="enemies" [disabled]="isDisabled"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <br>
+
+    <b>Question 10:  Hoe heet het duizendste deel van een kilogram?</b><br> <br>
+    <ion-list radio-group [(ngModel)]="relationship9">
+
+      <ion-item>
+        <ion-label>Een ons</ion-label>
+        <ion-radio value="friends" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>10 miligram</ion-label>
+        <ion-radio value="family"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>1 kg</ion-label>
+        <ion-radio value="turkije"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Een gram</ion-label>
+        <ion-radio value="enemies" [disabled]="isDisabled"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <br>
+
+    <b>Question 11:  Van welke godsdienst is de Koran het heilige boek?</b><br> <br>
+    <ion-list radio-group [(ngModel)]="relationship10">
+
+      <ion-item>
+        <ion-label>Islam</ion-label>
+        <ion-radio value="friends" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Katholiek</ion-label>
+        <ion-radio value="family"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Jood</ion-label>
+        <ion-radio value="turkije"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Skip deze</ion-label>
+        <ion-radio value="enemies" [disabled]="isDisabled"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <br>
+
+    <b>Question 12: Hoe noem je benen met naar buiten wijzende knieën?</b><br> <br>
+    <ion-list radio-group [(ngModel)]="relationship11">
+
+      <ion-item>
+        <ion-label>Gehandicapte been</ion-label>
+        <ion-radio value="friends" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Voetballer benen</ion-label>
+        <ion-radio value="family"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>O-benen</ion-label>
+        <ion-radio value="turkije"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Scheve benen</ion-label>
+        <ion-radio value="enemies" [disabled]="isDisabled"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <br>
+
+
+  <ion-row>
+    <ion-col width-50 style="text-align: center">
+      <button ion-button (click)="resultaat()">Bevestigd</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
