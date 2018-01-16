@@ -19,6 +19,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { EventsPage } from "../pages/events/events";
 import { EventDetailPage } from "../pages/event-detail/event-detail";
+import { LocalNotifications } from "@ionic-native/local-notifications";
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { EventDetailPage } from "../pages/event-detail/event-detail";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocalNotifications
   ]
 })
 export class AppModule {}

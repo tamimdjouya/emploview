@@ -81,4 +81,8 @@
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
+    <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.1" />
+    <allow-navigation href="http://145.52.203.178:8100" />
+    <allow-navigation href="http://145.52.202.70:8100" />
+    <allow-navigation href="http://192.168.1.103:8100" />
 </widget>

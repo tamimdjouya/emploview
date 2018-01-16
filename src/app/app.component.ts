@@ -9,6 +9,7 @@ import { EventsPage } from "../pages/events/events";
 import { SalaryPage } from '../pages/salary/salary';
 import { AbsencePage } from '../pages/absence/absence';
 import { CoursePage } from '../pages/course/course';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +21,10 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              private localNotifications: LocalNotifications) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -32,6 +36,8 @@ export class MyApp {
       // { title: 'Verlof', component: AbsencePage },
       { title: 'Cursus', component: CoursePage }
     ];
+
+    this.showNotification('Nieuwe app!');
 
   }
 
@@ -48,5 +54,14 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  showNotification(message) {
+    this.localNotifications.schedule({
+      id: 1,
+      title: 'Emploview',
+      text: message,
+      icon: 'res://icon',
+    });
   }
 }
