@@ -9,7 +9,12 @@ import { EventsPage } from "../pages/events/events";
 import { SalaryPage } from '../pages/salary/salary';
 import { AbsencePage } from '../pages/absence/absence';
 import { CoursePage } from '../pages/course/course';
+
 import { LocalNotifications } from '@ionic-native/local-notifications';
+
+import {LoginPage} from "../pages/login/login";
+import {AdminPage} from "../pages/admin/admin";
+
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +22,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AnnouncementsPage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -34,7 +39,10 @@ export class MyApp {
       // { title: 'HRM', component: HrmPage },
       // { title: 'Salaris', component: SalaryPage },
       // { title: 'Verlof', component: AbsencePage },
-      { title: 'Cursus', component: CoursePage }
+      { title: 'Cursus', component: CoursePage },
+      { title: 'Admin', component: AdminPage },
+      { title: 'Logout', component: LoginPage }
+
     ];
 
     this.showNotification('Nieuwe app!');

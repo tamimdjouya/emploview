@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Announcement } from "../../Models/announcement";
 import { AnnouncementDetailPage } from "../announcement-detail/announcement-detail";
+import {AuthServiceProvider} from "../../providers/auth-service/auth-service";
+import {AddAnnouncementPage} from "../add-announcement/add-announcement";
+import {AdminPage} from "../admin/admin";
+
+
+
 
 @Component({
   selector: 'page-announcements',
@@ -9,12 +15,15 @@ import { AnnouncementDetailPage } from "../announcement-detail/announcement-deta
 })
 export class AnnouncementsPage {
 
-  private announcements : Announcement[];
+  private announcements : Announcement[] = [];
+  private id = 2;
+  private announcementArray;
+  public isAdmin = false;
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authService: AuthServiceProvider) {
     this.getAnnouncements();
-
+    this.addMoreArray();
+    this.isAdmin = this.authService.validateIfAdmin();
   }
 
   getAnnouncements () {
@@ -39,12 +48,44 @@ export class AnnouncementsPage {
         content: 'Binnenkort gaan we verhuizen.',
         image: 'assets/imgs/move.jpeg',
         publishDate: new Date()
-      }
+      },
+
     ];
   }
+
+  addMoreArray(){
+    if (this.navParams.get('announcementKey')){
+      this.announcementArray = this.navParams.get('announcementKey');
+
+      let id = this.id++;
+      var title = this.announcementArray['title'];
+      var content = this.announcementArray['content'];
+      var image = this.announcementArray['image'];
+      var publishDate = this.announcementArray['publishDate'];
+
+      this.announcements.push({id, title, content, image, publishDate});
+      console.log(this.announcementArray);
+    }else
+      console.log('Array leeg');
+
+  }
+
 
   showDetail(announcement : Announcement) {
     this.navCtrl.push(AnnouncementDetailPage, {announcement: announcement});
   }
+
+  ionViewCanEnter(){
+    return this.authService.authenticated();
+  }
+
+  addBtnAnnouncement(){
+    this.navCtrl.push(AddAnnouncementPage);
+  }
+
+  goToAdmin(){
+    this.navCtrl.push(AdminPage);
+  }
+
 
 }

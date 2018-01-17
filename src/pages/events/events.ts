@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Event } from "../../Models/event";
 import { EventDetailPage } from "../event-detail/event-detail";
+import { AddEventPage} from "../add-event/add-event";
 
 @Component({
   selector: 'page-events',
@@ -9,13 +10,17 @@ import { EventDetailPage } from "../event-detail/event-detail";
 })
 export class EventsPage {
 
-  private events : Event[];
+  private events : Event[] = [];
   public signups = [];
+  private id = 1;
+  private eventsArray;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public navParams : NavParams) {
 
     this.getEvents();
+    this.addMoreArray();
     this.getSignups();
+
 
   }
 
@@ -40,6 +45,24 @@ export class EventsPage {
     ];
   }
 
+  addMoreArray(){
+    if (this.navParams.get('eventKey')){
+      this.eventsArray = this.navParams.get('eventKey');
+
+      let id = this.id++;
+      var title = this.eventsArray['title'];
+      var content = this.eventsArray['content'];
+      var image = this.eventsArray['image'];
+      var publishDate = this.eventsArray['publishDate'];
+      var startDate = new Date();
+
+      this.events.push({id, title, content, image, publishDate, startDate});
+      console.log(this.eventsArray);
+    }else
+      console.log('Array leeg');
+
+  }
+
   getSignups() {
     this.signups = [0];
   }
@@ -56,6 +79,10 @@ export class EventsPage {
         this.signups = signups;
       }
     });
+  }
+
+  addBtnEvent(){
+    this.navCtrl.push(AddEventPage);
   }
 
 }
