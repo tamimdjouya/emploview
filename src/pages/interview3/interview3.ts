@@ -26,6 +26,7 @@ export class Interview3Page {
 
   resultaat(){
     this.navCtrl.push(ResultaatPage);
+
   }
   // doAlert() {
   //   let alert = this.alertCtrl.create({
