@@ -18,5 +18,18 @@
     <span *ngIf="!isSignedup">Inschrijven</span>
     <span *ngIf="isSignedup">Uitschrijven</span>
   </button>
+  <button ion-button (click)="addGuest()" *ngIf="isSignedup">
+    Gast toevoegen
+  </button>
+
+  <ion-list padding-top>
+    <ion-item-divider>Gasten</ion-item-divider>
+    <ion-item *ngFor="let guest of guests">
+        {{guest}}
+      <button ion-button item-right color="danger" (click)="removeGuest(guest)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
