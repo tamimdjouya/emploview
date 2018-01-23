@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Event } from "../../Models/event";
 import { EventDetailPage } from "../event-detail/event-detail";
 import { AddEventPage} from "../add-event/add-event";
+import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 
 @Component({
   selector: 'page-events',
@@ -14,12 +15,14 @@ export class EventsPage {
   public signups = [];
   private id = 1;
   private eventsArray;
+  public isAdmin = false;
 
-  constructor(public navCtrl: NavController, public navParams : NavParams) {
+  constructor(public navCtrl: NavController, public navParams : NavParams, public authService: AuthServiceProvider) {
 
     this.getEvents();
     this.addMoreArray();
     this.getSignups();
+    this.isAdmin = this.authService.validateIfAdmin();
 
 
   }
