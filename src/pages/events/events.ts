@@ -5,6 +5,8 @@ import { EventDetailPage } from "../event-detail/event-detail";
 import { AddEventPage} from "../add-event/add-event";
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 
+
+
 @Component({
   selector: 'page-events',
   templateUrl: 'events.html'
