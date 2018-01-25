@@ -18,6 +18,6 @@
     <ion-badge *ngIf="isSignedup(e.id)" item-right>Ingeschreven</ion-badge>
   </ion-item>
   <br>
-  <button ion-button color="primary" (click)="addBtnEvent()">Toevoegen event</button>
+  <button *ngIf="isAdmin" ion-button color="primary" (click)="addBtnEvent()">Toevoegen event</button>
 
 </ion-content>

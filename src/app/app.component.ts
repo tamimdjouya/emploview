@@ -2,18 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { AnnouncementsPage } from '../pages/announcements/announcements';
-import { HrmPage } from '../pages/hrm/hrm';
 import { EventsPage } from "../pages/events/events";
-import { SalaryPage } from '../pages/salary/salary';
-import { AbsencePage } from '../pages/absence/absence';
-import { CoursePage } from '../pages/course/course';
-
 import { LocalNotifications } from '@ionic-native/local-notifications';
-
 import {LoginPage} from "../pages/login/login";
-import {AdminPage} from "../pages/admin/admin";
+
 
 
 @Component({
@@ -39,8 +32,7 @@ export class MyApp {
       // { title: 'HRM', component: HrmPage },
       // { title: 'Salaris', component: SalaryPage },
       // { title: 'Verlof', component: AbsencePage },
-      { title: 'Cursus', component: CoursePage },
-      { title: 'Admin', component: AdminPage },
+      // { title: 'Cursus', component: CoursePage },
       { title: 'Logout', component: LoginPage }
 
     ];
