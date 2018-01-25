@@ -10,8 +10,6 @@ import { SalaryPage } from '../pages/salary/salary';
 import { AbsencePage } from '../pages/absence/absence';
 import { CoursePage } from '../pages/course/course';
 
-import { LocalNotifications } from '@ionic-native/local-notifications';
-
 import {LoginPage} from "../pages/login/login";
 import {AdminPage} from "../pages/admin/admin";
 
@@ -28,8 +26,7 @@ export class MyApp {
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
-              public splashScreen: SplashScreen,
-              private localNotifications: LocalNotifications) {
+              public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -44,8 +41,6 @@ export class MyApp {
       { title: 'Logout', component: LoginPage }
 
     ];
-
-    this.showNotification('Nieuwe app!');
 
   }
 
@@ -62,14 +57,5 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
-  }
-
-  showNotification(message) {
-    this.localNotifications.schedule({
-      id: 1,
-      title: 'Emploview',
-      text: message,
-      icon: 'res://icon',
-    });
   }
 }

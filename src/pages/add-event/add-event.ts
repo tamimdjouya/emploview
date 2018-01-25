@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EventsPage } from "../events/events";
+import { NotificationService } from "../../providers/notification-service/notification-service";
 
 /**
  * Generated class for the AddEventPage page.
@@ -18,7 +19,7 @@ export class AddEventPage {
 
   private event = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public notificationSerivce: NotificationService) {
     this.event;
   }
 
@@ -29,6 +30,7 @@ export class AddEventPage {
   addEvent(){
     //console.log(this.events);
     this.navCtrl.setRoot(EventsPage, {eventKey : this.event});
+    this.notificationSerivce.showNotificaiton(this.event.title);
   }
 
 }

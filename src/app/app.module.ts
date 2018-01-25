@@ -34,6 +34,7 @@ import { EventDetailPage } from "../pages/event-detail/event-detail";
 import { LocalNotifications } from "@ionic-native/local-notifications";
 
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { NotificationService } from "../providers/notification-service/notification-service";
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     Transfer,
     Camera,
     FilePath,
+    NotificationService
   ]
 })
 export class AppModule {}
