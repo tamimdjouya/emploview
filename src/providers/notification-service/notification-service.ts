@@ -1,5 +1,7 @@
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class NotificationService {
   constructor(public localNotifications: LocalNotifications){}
 

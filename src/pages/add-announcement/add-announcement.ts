@@ -29,6 +29,6 @@ export class AddAnnouncementPage {
   addAnnouncement(){
     console.log(this.announcement);
     this.navCtrl.setRoot(AnnouncementsPage, {announcementKey : this.announcement});
-    this.notificationSerivce.showNotificaiton(this.announcement.title);
+    this.notificationSerivce.showNotificaiton(this.announcement['title']);
   }
 }

@@ -30,7 +30,7 @@ export class AddEventPage {
   addEvent(){
     //console.log(this.events);
     this.navCtrl.setRoot(EventsPage, {eventKey : this.event});
-    this.notificationSerivce.showNotificaiton(this.event.title);
+    this.notificationSerivce.showNotificaiton(this.event['event']);
   }
 
 }
